@@ -1,0 +1,19 @@
+# Input file for diffusion problem
+
+# Geometry
+lx = 1.0
+ly = 1.0
+
+# Grid
+nx = 4096
+ny = 4096
+
+# Defusion constant
+d = 1.00
+
+# Number of iteration
+n_max = 1000
+
+# Elapsed time
+#t_total = 0.125
+

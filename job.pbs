@@ -1,0 +1,13 @@
+#!/bin/sh
+#PBS -r n
+#PBS -N diff
+#PBS -l nodes=1:ppn=20
+#PBS -j oe
+#PBS -l walltime=00:25:30
+
+#NPROCS=`wc -l < $PBS_NODEFILE` 
+#echo "NPROCS = " $NPROCS
+#module add mpi/studio
+cd ~/HPC/MPI/d14/
+./test_utility.sh time
+
