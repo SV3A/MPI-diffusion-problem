@@ -59,12 +59,12 @@ program main
     call stitch         ! Collect and stitch data
   endif
 
-  ! Compute RMS error
-  if (rank == 0) then
-    call read_T(T_np1, 'T_np01.dat') ! Read seq. field for comparison
-    write(*,'("Error was: "e9.2/)') sqrt(1.0_mkd/real(nx*ny))*(sum(T-T_np1)**2)
-    !call output
-  endif
+  ! Compute RMS error to validate parallel solution
+  !if (rank == 0) then
+  !  call read_T(T_np1, 'T_np01.dat') ! Read seq. field for comparison
+  !  write(*,'("Error was: "e9.2/)') sqrt(1.0_mkd/real(nx*ny))*(sum(T-T_np1)**2)
+  !  !call output
+  !endif
 
   call MPI_Finalize(info); if ( info.ne.0 ) write(*,'("MPI ERROR Finalize")')
 end program main
